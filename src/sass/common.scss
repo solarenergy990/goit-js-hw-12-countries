@@ -16,19 +16,12 @@ h1 {
   display: flex;
   justify-content: center;
 }
-// img {
-//   display: block;
-//   max-width: 100%;
-//   height: auto;
-// }
 
 .card {
   width: 100%;
-  // padding-left: 100%;
-  // padding-right: 100%;
+
   display: flex;
   justify-content: center;
-  // align-items: center;
 }
 
 .card__flag {
@@ -46,15 +39,6 @@ h1 {
 .country__list {
   display: b;
 }
-// .card-text {
-//   margin-top: 0;
-//   margin-bottom: 10px;
-// }
-
-// .card-img-top {
-//   display: flex;
-//   justify-content: center;
-// }
 
 .search-form {
   padding: 10px;
@@ -73,6 +57,3 @@ h1 {
   width: 320px;
   height: 35px;
 }
-// .card {
-//   margin: 10px;
-// }
