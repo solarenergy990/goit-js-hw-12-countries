@@ -12,6 +12,7 @@ import getRefs from './js/refs';
 const refs = getRefs();
 
 const onSearch = searchQuery => {
+  // searchQuery.trim();
   API.fetchCountries(searchQuery).then(renderCountries).catch(onError);
 };
 
@@ -40,5 +41,5 @@ const onError = () => {
 
 refs.searchForm.addEventListener(
   'input',
-  debounce(evt => onSearch(evt.target.value), 500),
+  debounce(evt => onSearch(evt.target.value.trim()), 500),
 );
