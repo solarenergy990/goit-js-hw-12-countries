@@ -12,14 +12,14 @@ import getRefs from './js/refs';
 const refs = getRefs();
 
 const onSearch = searchQuery => {
-  // searchQuery.trim();
+  refs.cardContainer.innerHTML = '';
+  if (!searchQuery) {
+    return;
+  }
   API.fetchCountries(searchQuery).then(renderCountries).catch(onError);
 };
 
 function renderCountries(country) {
-  const countryMarkup = countryCard(country);
-  const countryListMarkup = countryListCard(country);
-
   if (country.length >= 10) {
     return error({
       delay: 2000,
@@ -27,11 +27,13 @@ function renderCountries(country) {
     });
   }
   if (country.length >= 2 && country.length <= 10) {
+    const countryListMarkup = countryListCard(country);
     return (refs.cardContainer.innerHTML = countryListMarkup);
   }
-  // console.log(refs.cardContainer);
+
   if (country.length === 1) {
-    return (refs.cardContainer.innerHTML = countryMarkup);
+    const countryMarkup = countryCard(country);
+    refs.cardContainer.innerHTML = countryMarkup;
   }
 }
 
